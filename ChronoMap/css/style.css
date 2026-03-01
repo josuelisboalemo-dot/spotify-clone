@@ -1,0 +1,205 @@
+/* CHRONOS MAPS - PREMIUM DESIGN SYSTEM v3.0
+   Tema: Tactical Dark Neon
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Inter:wght@300;400;600&display=swap');
+
+:root {
+    --neon-blue: #00f2ff;
+    --neon-red: #ff0055;
+    --bg-black: #020205;
+    --glass-bg: rgba(6, 6, 10, 0.85);
+    --glass-border: rgba(0, 242, 255, 0.2);
+    --font-main: 'Inter', sans-serif;
+    --font-tech: 'Orbitron', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    cursor: crosshair; /* Cursor estilo mira */
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-black);
+    color: #fff;
+    font-family: var(--font-main);
+    overflow: hidden;
+}
+
+/* --- CAMADA DO MAPA --- */
+#map {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    filter: brightness(0.7) contrast(1.2); /* Deixa o mapa mais dramático */
+}
+
+/* --- INTERFACE OVERLAY --- */
+.ui-container {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 40px;
+    pointer-events: none;
+    background: radial-gradient(circle at center, transparent 40%, rgba(0,0,0,0.4) 100%);
+}
+
+.ui-container > * { pointer-events: auto; }
+
+/* --- PAINEL LATERAL HOLOGRÁFICO --- */
+#info-panel {
+    width: 400px;
+    padding: 35px;
+    border-radius: 2px; /* Visual mais industrial/quadrado */
+    background: var(--glass-bg);
+    backdrop-filter: blur(15px);
+    border-left: 4px solid var(--neon-blue);
+    border-top: 1px solid var(--glass-border);
+    border-bottom: 1px solid var(--glass-border);
+    border-right: 1px solid var(--glass-border);
+    box-shadow: -20px 0 50px rgba(0,0,0,0.5);
+    animation: panelSlide 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.logo {
+    font-family: var(--font-tech);
+    font-size: 26px;
+    letter-spacing: 5px;
+    color: var(--neon-blue);
+    text-shadow: 0 0 20px rgba(0, 242, 255, 0.6);
+    margin-bottom: 5px;
+}
+
+.logo span { color: #fff; opacity: 0.8; }
+
+.system-status {
+    font-family: var(--font-tech);
+    font-size: 9px;
+    color: var(--neon-blue);
+    margin-bottom: 30px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    opacity: 0.7;
+}
+
+.pulse {
+    width: 8px;
+    height: 8px;
+    background: var(--neon-blue);
+    border-radius: 50%;
+    animation: neonPulse 1.5s infinite;
+}
+
+/* --- TEXTO DOS EVENTOS --- */
+#event-details h2 {
+    font-family: var(--font-tech);
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    color: #fff;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    padding-bottom: 10px;
+}
+
+#event-details p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color: rgba(255,255,255,0.7);
+    font-weight: 300;
+}
+
+/* --- CONTROLE DE TEMPO (FOOTER) --- */
+#timeline-wrapper {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 25px 50px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    border: 1px solid var(--glass-border);
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    position: relative;
+}
+
+/* BOTÃO PLAY NEON */
+#play-pause {
+    width: 70px;
+    height: 70px;
+    background: transparent;
+    border: 2px solid var(--neon-blue);
+    color: var(--neon-blue);
+    border-radius: 50%;
+    font-size: 24px;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: inset 0 0 10px var(--neon-blue);
+}
+
+#play-pause:hover {
+    background: var(--neon-blue);
+    color: #000;
+    box-shadow: 0 0 30px var(--neon-blue);
+    transform: scale(1.1);
+}
+
+#current-year {
+    font-family: var(--font-tech);
+    font-size: 28px;
+    font-weight: 900;
+    color: #fff;
+    min-width: 180px;
+    text-shadow: 0 0 10px rgba(255,255,255,0.3);
+}
+
+/* SLIDER CUSTOMIZADO */
+#timeline-slider {
+    flex-grow: 1;
+    height: 4px;
+    appearance: none;
+    background: rgba(255,255,255,0.1);
+    border-radius: 2px;
+}
+
+#timeline-slider::-webkit-slider-thumb {
+    appearance: none;
+    width: 15px;
+    height: 30px;
+    background: var(--neon-blue);
+    border-radius: 2px;
+    box-shadow: 0 0 15px var(--neon-blue);
+    cursor: pointer;
+}
+
+/* --- ANIMAÇÕES --- */
+@keyframes neonPulse {
+    0% { transform: scale(1); opacity: 1; box-shadow: 0 0 0px var(--neon-blue); }
+    50% { transform: scale(1.2); opacity: 0.5; box-shadow: 0 0 15px var(--neon-blue); }
+    100% { transform: scale(1); opacity: 1; box-shadow: 0 0 0px var(--neon-blue); }
+}
+
+@keyframes panelSlide {
+    from { transform: translateX(-100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+/* Estilo para ícones de guerra específicos */
+.marcador-animado[style*="explosion.svg"] {
+    animation: warPulse 0.8s infinite alternate;
+}
+
+@keyframes warPulse {
+    from { filter: drop-shadow(0 0 2px var(--neon-red)) brightness(1); }
+    to { filter: drop-shadow(0 0 15px var(--neon-red)) brightness(1.5); transform: scale(1.2); }
+}

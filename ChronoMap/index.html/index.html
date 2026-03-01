@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CHRONOS MAPS | Simulador Histórico Ultra</title>
+    
+    <script src="https://unpkg.com/maplibre-gl@3.6.2/dist/maplibre-gl.js"></script>
+    <link href="https://unpkg.com/maplibre-gl@3.6.2/dist/maplibre-gl.css" rel="stylesheet" />
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div id="map"></div>
+
+    <div class="ui-container">
+        
+        <aside id="info-panel">
+            <header>
+                <div class="logo">CHRONOS<span>MAPS</span></div>
+                <div class="system-status">
+                    <span class="pulse"></span> SISTEMA ONLINE
+                </div>
+            </header>
+            
+            <div id="event-details">
+                <h2>Aguardando Inicialização...</h2>
+                <p>O motor histórico está processando as coordenadas cronológicas. Arraste o slider para iniciar.</p>
+            </div>
+
+            <footer>
+                <small>COORDENADAS GLOBAIS ATIVAS</small>
+            </footer>
+        </aside>
+
+        <div id="timeline-wrapper">
+            <button id="play-pause" title="Iniciar Simulação">▶</button>
+            
+            <div id="current-year">ANO: 1500</div>
+            
+            <input type="range" id="timeline-slider" 
+                   min="1400" max="2026" value="1500" step="1">
+            
+            <div class="era-indicator">ERA MODERNA</div>
+        </div>
+
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

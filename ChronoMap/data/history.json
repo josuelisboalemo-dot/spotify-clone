@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "projeto": "ChronosMaps",
+    "versao": "1.0",
+    "total_eventos": 1000
+  },
+  "acontecimentos": [
+    {
+      "id": "exp_pedro_cabral",
+      "ano": 1500,
+      "tipo": "navio",
+      "icone": "caravela",
+      "titulo": "Chegada ao Brasil",
+      "descricao": "Pedro Álvares Cabral chega ao litoral baiano.",
+      "coords": [-39.0, -16.4],
+      "rota": [[-9.1, 38.7], [-14.9, 14.7], [-39.0, -16.4]]
+    },
+    {
+      "id": "dia_d_ww2",
+      "ano": 1944,
+      "tipo": "guerra",
+      "icone": "tanque",
+      "titulo": "Dia D - Normandia",
+      "descricao": "Invasão aliada na França durante a 2ª Guerra Mundial.",
+      "coords": [-0.5, 49.3],
+      "intensidade": "alta"
+    },
+    {
+      "id": "voo_14_bis",
+      "ano": 1906,
+      "tipo": "aviao",
+      "icone": "14bis",
+      "titulo": "Voo do 14-Bis",
+      "descricao": "Santos Dumont voa em Paris com o 14-Bis.",
+      "coords": [2.3, 48.8]
+    }
+  ]
+}
